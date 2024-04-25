@@ -23,15 +23,18 @@ const Input = ({ datas }: InputProps) => {
         />
       </div>
 
-      <FoundItems
-        founds={
-          inputValue?.length > 0
-            ? datas.filter((data) =>
-                data?.name?.toLowerCase().includes(inputValue)
-              )
-            : []
-        }
-      />
+      {inputValue.length > 0 && (
+        <FoundItems
+          founds={
+            inputValue?.length > 0
+              ? datas.filter((data) =>
+                  data?.name?.toLowerCase().includes(inputValue)
+                )
+              : []
+          }
+          text={inputValue}
+        />
+      )}
     </div>
   );
 };
