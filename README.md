@@ -2,6 +2,10 @@
 
 Easy to use multi selectable input component
 
+### Demo
+
+[visit site](https://react-multi-select-alpha.vercel.app/)
+
 ### Installation
 
 To run it locally, first you need to clone this project (or download)

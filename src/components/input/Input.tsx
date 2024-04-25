@@ -69,6 +69,7 @@ const Input = ({
             className="border-2 border-none rounded focus:outline-none w-full ps-2 pe-8 text-xl"
             value={inputValue}
             onChange={(e) => handleInputChange(e)}
+            placeholder="Type something to search..."
           />
         </div>
         <span
