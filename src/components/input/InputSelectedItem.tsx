@@ -1,10 +1,7 @@
 import { useAppDispatch } from '../../redux/dispatch';
 import * as actionTypes from '../../redux/actionTypes';
 import Icon from '../icon/Icon';
-
-type InputSelectedItemProps = {
-  item: { name: string; id: number };
-};
+import { InputSelectedItemProps } from '../../types/componentPropsType';
 
 const InputSelectedItem = ({ item }: InputSelectedItemProps) => {
   const dispatch = useAppDispatch();

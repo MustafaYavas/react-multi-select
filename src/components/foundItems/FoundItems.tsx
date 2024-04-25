@@ -1,13 +1,8 @@
 import { connect } from 'react-redux';
 import styles from './FoundItems.module.scss';
 import Item from './Item';
-import { DataType } from '../../types/dataType';
 import { RootState } from '../../redux/configureStore';
-
-type FoundItemsProps = {
-  text: string;
-  searchResults: DataType[];
-};
+import { FoundItemsProps } from '../../types/componentPropsType';
 
 const FoundItems = ({ text, searchResults }: FoundItemsProps) => {
   return (

@@ -3,18 +3,10 @@ import FoundItems from '../foundItems/FoundItems';
 import styles from './Input.module.scss';
 import { connect } from 'react-redux';
 import { RootState } from '../../redux/configureStore';
-import { DataType } from '../../types/dataType';
 import InputSelectedItem from './InputSelectedItem';
 import { handleListItemNavigation } from '../../helpers/navigation';
 import { useAppDispatch } from '../../redux/dispatch';
-
-type InputProps = {
-  datas: DataType[];
-  searchResults: DataType[];
-  items: { name: string; id: number }[];
-  currentListItemIndex: number | null;
-  currentSelectedItemIndex: number | null;
-};
+import { InputProps } from '../../types/componentPropsType';
 
 const Input = ({
   datas,

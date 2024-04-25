@@ -1,18 +1,10 @@
-import { DataType } from '../../types/dataType';
 import { useAppDispatch } from '../../redux/dispatch';
 import * as actionTypes from '../../redux/actionTypes';
 import { RootState } from '../../redux/configureStore';
 import { connect } from 'react-redux';
 import styles from './FoundItems.module.scss';
 import { useEffect, useRef } from 'react';
-
-type ItemProps = {
-  found: DataType;
-  text: string;
-  items: { name: string; id: number }[];
-  itemIndex: number;
-  currentListItemIndex: number | null;
-};
+import { ItemProps } from '../../types/componentPropsType';
 
 const Item = ({
   found,

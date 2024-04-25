@@ -1,11 +1,7 @@
+import { generalReducerype } from '../../types/reducerType';
 import * as actionTypes from '../actionTypes';
 
-type initialStateType = {
-  currentListItemIndex: number | null;
-  currentSelectedItemIndex: number | null;
-};
-
-const initialState: initialStateType = {
+const initialState: generalReducerype = {
   currentListItemIndex: null,
   currentSelectedItemIndex: null,
 };

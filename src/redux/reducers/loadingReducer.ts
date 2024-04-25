@@ -1,7 +1,7 @@
-import { Loading } from '../../types/loadingType';
+import { loadingReducerType } from '../../types/reducerType';
 import * as actionTypes from '../actionTypes';
 
-const initialState: Loading = {
+const initialState: loadingReducerType = {
   isLoading: false,
 };
 

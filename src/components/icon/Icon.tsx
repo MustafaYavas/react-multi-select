@@ -1,11 +1,5 @@
 import { FiX } from 'react-icons/fi';
-
-type IconProps = {
-  size?: number;
-  className?: string;
-  iconName: string;
-  color?: string;
-};
+import { IconProps } from '../../types/componentPropsType';
 
 const Icon = ({ size, className, iconName, color }: IconProps) => {
   if (iconName === 'FiX') {

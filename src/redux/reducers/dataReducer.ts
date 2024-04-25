@@ -1,11 +1,7 @@
-import { DataType } from '../../types/dataType';
+import { dataReducerType } from '../../types/reducerType';
 import * as actionTypes from '../actionTypes';
 
-type initialStateType = {
-  datas: DataType[];
-  searchResults: DataType[];
-};
-const initialDataState: initialStateType = {
+const initialDataState: dataReducerType = {
   datas: [],
   searchResults: [],
 };

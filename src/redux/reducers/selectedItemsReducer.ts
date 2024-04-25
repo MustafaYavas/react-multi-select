@@ -1,9 +1,7 @@
+import { selectedItemsReducerType } from '../../types/reducerType';
 import * as actionTypes from '../actionTypes';
 
-type initialStateType = {
-  selectedItems: { name: string; id: number }[];
-};
-const initialSelectedItemsState: initialStateType = {
+const initialSelectedItemsState: selectedItemsReducerType = {
   selectedItems: [],
 };
 
