@@ -3,7 +3,6 @@ import * as actionTypes from '../actionTypes';
 
 const initialState: generalReducerype = {
   currentListItemIndex: null,
-  currentSelectedItemIndex: null,
 };
 
 export const generalReducer = (state = initialState, action: any) => {
@@ -13,11 +12,6 @@ export const generalReducer = (state = initialState, action: any) => {
     return {
       ...state,
       currentListItemIndex: payload,
-    };
-  } else if (type === actionTypes.SET_CURRENT_SELECTED_ITEM_INDEX) {
-    return {
-      ...state,
-      currentSelectedItemIndex: payload,
     };
   } else {
     return state;

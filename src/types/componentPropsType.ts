@@ -25,9 +25,13 @@ export type InputProps = {
   searchResults: DataType[];
   items: { name: string; id: number }[];
   currentListItemIndex: number | null;
-  currentSelectedItemIndex: number | null;
 };
 
 export type InputSelectedItemProps = {
   item: { name: string; id: number };
+};
+
+export type MultiSelectProps = {
+  isLoading: boolean;
+  error: boolean;
 };

@@ -68,7 +68,6 @@ const mapStateToProps = (state: RootState) => {
     searchResults: state.dataReducer.searchResults,
     items: state.selectedItemsReducer.selectedItems,
     currentListItemIndex: state.generalReducer.currentListItemIndex,
-    currentSelectedItemIndex: state.generalReducer.currentSelectedItemIndex,
   };
 };
 

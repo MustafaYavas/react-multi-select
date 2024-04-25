@@ -3,11 +3,11 @@ import { DataType } from './dataType';
 export type dataReducerType = {
   datas: DataType[];
   searchResults: DataType[];
+  error: boolean;
 };
 
 export type generalReducerype = {
   currentListItemIndex: number | null;
-  currentSelectedItemIndex: number | null;
 };
 
 export type loadingReducerType = {
