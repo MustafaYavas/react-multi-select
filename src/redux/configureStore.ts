@@ -3,10 +3,12 @@ import createSagaMiddleware from 'redux-saga';
 import Saga from './saga/Saga';
 import dataReducer from './reducers/dataReducer';
 import loadingReducer from './reducers/loadingReducer';
+import selectedItemsReducer from './reducers/selectedItemsReducer';
 
 const rootReducer = combineReducers({
   dataReducer,
   loadingReducer,
+  selectedItemsReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
