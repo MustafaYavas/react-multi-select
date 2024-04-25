@@ -3,9 +3,11 @@ import * as actionTypes from '../actionTypes';
 
 type initialStateType = {
   datas: DataType[];
+  searchResults: DataType[];
 };
 const initialDataState: initialStateType = {
   datas: [],
+  searchResults: [],
 };
 
 const dataReducer = (state = initialDataState, action: any) => {
@@ -15,6 +17,11 @@ const dataReducer = (state = initialDataState, action: any) => {
     return {
       ...state,
       datas: payload,
+    };
+  } else if (type === actionTypes.SEARCH_RESULTS_DATA) {
+    return {
+      ...state,
+      searchResults: payload,
     };
   } else {
     return state;

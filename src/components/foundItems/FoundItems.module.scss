@@ -10,5 +10,9 @@
 
   .item {
     border-bottom: 1px solid var(--primary-color);
+
+    &:hover {
+      background-color: rgb(226 232 240);
+    }
   }
 }

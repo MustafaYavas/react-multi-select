@@ -4,8 +4,10 @@ import Saga from './saga/Saga';
 import dataReducer from './reducers/dataReducer';
 import loadingReducer from './reducers/loadingReducer';
 import selectedItemsReducer from './reducers/selectedItemsReducer';
+import generalReducer from './reducers/generalReducer';
 
 const rootReducer = combineReducers({
+  generalReducer,
   dataReducer,
   loadingReducer,
   selectedItemsReducer,
