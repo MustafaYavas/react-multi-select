@@ -15,6 +15,12 @@ export const handleListItemNavigation = (
           payload: currentListItemIndex + 1,
         });
       }
+      if (currentListItemIndex === searchResults.length - 1) {
+        dispatch({
+          type: 'SET_CURRENT_LIST_ITEM_INDEX',
+          payload: 0,
+        });
+      }
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       if (currentListItemIndex > 0) {
