@@ -3,6 +3,7 @@ import { useAppDispatch } from '../../redux/dispatch';
 import * as actionTypes from '../../redux/actionTypes';
 import { RootState } from '../../redux/configureStore';
 import { connect } from 'react-redux';
+import styles from './FoundItems.module.scss';
 
 type ItemProps = {
   found: DataType;
@@ -25,15 +26,15 @@ const Item = ({ found, text, items }: ItemProps) => {
 
   return (
     <div
-      className="flex cursor-pointer hover:bg-slate-200 p-3"
+      className={`flex cursor-pointer hover:bg-slate-200 p-3 ${styles['item']}`}
       onClick={() => handleItem(found.name, found.id)}
     >
       <div className="flex">
         <input
           className="cursor-pointer"
           type="checkbox"
+          defaultChecked={false}
           checked={items.find((item) => item.id === found.id) ? true : false}
-          onChange={() => handleItem(found.name, found.id)}
         />
         <img
           src={found.image}
