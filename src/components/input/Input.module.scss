@@ -1,9 +1,14 @@
 .input-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
   border: 2px solid var(--primary-color);
   border-radius: 5px;
   width: 50%;
+  position: relative;
+
+  .turned-icon {
+    transform: rotate(180deg);
+  }
 }

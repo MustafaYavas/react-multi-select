@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 
 const MultiSelect = ({ isLoading, error }: MultiSelectProps) => {
   const dispatch = useAppDispatch();
-  console.log(error);
+
   useEffect(() => {
     dispatch({ type: actionTypes.DATA_REQUEST });
   }, [dispatch]);

@@ -7,6 +7,7 @@ import InputSelectedItem from './InputSelectedItem';
 import { handleListItemNavigation } from '../../helpers/navigation';
 import { useAppDispatch } from '../../redux/dispatch';
 import { InputProps } from '../../types/componentPropsType';
+import Icon from '../icon/Icon';
 
 const Input = ({
   datas,
@@ -16,6 +17,7 @@ const Input = ({
 }: InputProps) => {
   const [inputValue, setInputValue] = useState<string>('');
   const dispatch = useAppDispatch();
+  const [showList, setShowList] = useState<boolean>(true);
 
   useEffect(() => {
     if (inputValue.length === 0) {
@@ -35,29 +37,39 @@ const Input = ({
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     handleListItemNavigation(e, dispatch, currentListItemIndex, searchResults);
   };
-
+  console.log(showList);
   return (
     <div
       className="flex items-center flex-col"
       onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => handleKeyDown(e)}
     >
       <div className={styles['input-wrapper']}>
-        {items.length > 0 && (
-          <div className="py-2 text-start">
-            {items.map((item) => (
-              <InputSelectedItem key={item.id} item={item} />
-            ))}
-          </div>
-        )}
-        <input
-          type="text"
-          className="border-2 border-none rounded focus:outline-none w-full px-2 text-xl"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
+        <div className="w-full">
+          {items.length > 0 && (
+            <div className="py-2 text-start">
+              {items.map((item) => (
+                <InputSelectedItem key={item.id} item={item} />
+              ))}
+            </div>
+          )}
+          <input
+            type="text"
+            className="border-2 border-none rounded focus:outline-none w-full ps-2 pe-8 text-xl"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+        </div>
+        <span
+          onClick={() => setShowList(!showList)}
+          className={`cursor-pointer ${
+            inputValue.length > 0 && showList ? styles['turned-icon'] : ''
+          }`}
+        >
+          <Icon iconName="MdKeyboardArrowDown" size={22} />
+        </span>
       </div>
 
-      {inputValue.length > 0 && <FoundItems text={inputValue} />}
+      {inputValue.length > 0 && showList && <FoundItems text={inputValue} />}
     </div>
   );
 };
