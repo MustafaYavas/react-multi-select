@@ -7,7 +7,7 @@ export const handleListItemNavigation = (
   searchResults: DataType[]
 ) => {
   if (currentListItemIndex !== null) {
-    if (e.key === 'ArrowDown' || e.key === 'tab') {
+    if (e.key === 'ArrowDown' || e.key === 'Tab') {
       if (currentListItemIndex < searchResults.length - 1) {
         e.preventDefault();
         dispatch({
@@ -25,6 +25,13 @@ export const handleListItemNavigation = (
       }
     } else {
       return;
+    }
+  } else {
+    if (e.key === 'Tab') {
+      dispatch({
+        type: 'SET_CURRENT_LIST_ITEM_INDEX',
+        payload: 0,
+      });
     }
   }
 };
