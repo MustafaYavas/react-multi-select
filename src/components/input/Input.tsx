@@ -37,11 +37,23 @@ const Input = ({
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     handleListItemNavigation(e, dispatch, currentListItemIndex, searchResults);
   };
-  console.log(showList);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!showList) setShowList(true);
+    setInputValue(e.target.value);
+  };
+
+  const handleClickIcon = () => {
+    if (inputValue.length > 0) {
+      setShowList(!showList);
+    } else {
+      setShowList(true);
+    }
+  };
   return (
     <div
       className="flex items-center flex-col"
-      onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => handleKeyDown(e)}
+      onKeyDown={(e) => handleKeyDown(e)}
     >
       <div className={styles['input-wrapper']}>
         <div className="w-full">
@@ -56,11 +68,11 @@ const Input = ({
             type="text"
             className="border-2 border-none rounded focus:outline-none w-full ps-2 pe-8 text-xl"
             value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
+            onChange={(e) => handleInputChange(e)}
           />
         </div>
         <span
-          onClick={() => setShowList(!showList)}
+          onClick={() => handleClickIcon()}
           className={`cursor-pointer ${
             inputValue.length > 0 && showList ? styles['turned-icon'] : ''
           }`}
