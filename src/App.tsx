@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div className="mb-5 flex flex-col header">
-        <p className="text-2xl mt-3">Multi-select Component</p>
+        <p className="text-2xl mt-3">React Multi Select</p>
       </div>
       <MultiSelect />
     </>

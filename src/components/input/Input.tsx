@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import FoundItems from '../foundItems/FoundItems';
 import styles from './Input.module.scss';
 import { connect } from 'react-redux';
@@ -16,8 +16,13 @@ const Input = ({
   currentListItemIndex,
 }: InputProps) => {
   const [inputValue, setInputValue] = useState<string>('');
-  const dispatch = useAppDispatch();
   const [showList, setShowList] = useState<boolean>(true);
+  const dispatch = useAppDispatch();
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   useEffect(() => {
     if (inputValue.length === 0) {
@@ -65,6 +70,7 @@ const Input = ({
             </div>
           )}
           <input
+            ref={inputRef}
             type="text"
             className="border-2 border-none rounded focus:outline-none w-full ps-2 pe-8 text-xl"
             value={inputValue}
